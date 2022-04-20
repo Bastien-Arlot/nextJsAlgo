@@ -70,5 +70,27 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         return data;
     };
 
+    // Quick sort
+    const quickSort = (data) => {
+        let compare = 0;
+        const sort = (data) => {
+            if (data.length <= 1) return data;
+            let pivot = data[data.length - 1];
+            let left = [];
+            let right = [];
+            for (let i = 0; i < data.length - 1; i++) {
+                if (data[i] < pivot) {
+                    left.push(data[i]);
+                } else {
+                    right.push(data[i]);
+                }
+                compare++;
+            }
+            return [...sort(left), pivot, ...sort(right)];
+        };
+        data = sort(data);
+        console.log(`Tri rapide: ${compare} comparaisons`);
+        return data;
+    };
 
 });
