@@ -8,7 +8,7 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         console.error(error.message);
         return ;
     }
-    console.log(data);
+
     const arr = data.split(" ").map(num => Number(num));
 
     //BubbleSort
@@ -27,6 +27,8 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         console.log(`Tri à bulle: ${compare} comparaisons`);
         return data;
     };
+    let arrDuplicated = [...arr];
+    console.log(bubbleSort(arrDuplicated));
 
 
 
@@ -46,7 +48,8 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         console.log(`Tri par insertion: ${compare} comparaisons`);
         return data;
     };
-    console.log(insertionSort(arr));
+arrDuplicated = [...arr];
+    console.log(insertionSort(arrDuplicated));
 
     // Select sort
     const selectSort = (data) => {
@@ -69,6 +72,8 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         console.log(`Tri par selection: ${compare} comparaisons`);
         return data;
     };
+    arrDuplicated = [...arr];
+    console.log(selectSort(arrDuplicated));
 
     // Quick sort
     const quickSort = (data) => {
@@ -93,4 +98,6 @@ fs.readFile(fileName, 'utf8', (error, data) => {
         return data;
     };
 
+    arrDuplicated = [...arr];
+    console.log(quickSort(arrDuplicated));
 });
