@@ -22,6 +22,8 @@ if (arr.length < 1) {
 ;
 console.log(arr);
 
+//Exercice 1 sujet 1
+
 const addAndCompare = (data, num) => {
     let compare = 0;
     for (let i = 0; i < data.length; i++) {
@@ -39,3 +41,9 @@ const addAndCompare = (data, num) => {
 }
 
 console.log(addAndCompare(arr, 17));
+
+// Exercice 2(actually 3) sujet 1
+
+const addAndCompare2 = (data, num)  => data.some((set => x => set.has(x) || !set.add(num - n))(new Set));
+
+console.log(addAndCompare2(arr, 17));
