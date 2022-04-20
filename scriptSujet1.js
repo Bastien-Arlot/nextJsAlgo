@@ -42,8 +42,24 @@ const addAndCompare = (data, num) => {
 
 console.log(addAndCompare(arr, 17));
 
-// Exercice 2(actually 3) sujet 1
+// Exercice 3 & 5 sujet 1
 
-const addAndCompare2 = (data, num)  => data.some((set => x => set.has(x) || !set.add(num - n))(new Set));
+const addAndCompare2 = (data, num) => {
+    let compare = 0;
+    let searchValues = new Set();
+    searchValues.add(num - data[0]);
+    for (let i = 1, length = data.length; i < length; i++) {
+        compare++;
+        let searchVal = num - data[i];
+        if (searchValues.has(data[i])) {
+            console.log(`Nous assistons ici à une complexité de ${compare}`);
+            return true;
+        } else {
+            searchValues.add(searchVal);
+        }
+    }
 
-console.log(addAndCompare2(arr, 17));
+    console.log(`Nous assistons ici à une complexité de ${compare}`);
+    return false;
+};
+console.log(addAndCompare2(arr, 19));
