@@ -48,4 +48,27 @@ fs.readFile(fileName, 'utf8', (error, data) => {
     };
     console.log(insertionSort(arr));
 
+    // Select sort
+    const selectSort = (data) => {
+        let compare = 0;
+        for (let i = 0; i < data.length - 1; i++) {
+            min = i;
+            for (let j = i + 1; j < data.length; j++) {
+                compare++;
+                if (data[j] < data[min]) {
+                    min = j;
+                }
+            }
+            if (min != i) {
+                let tmp = data[i];
+                data[i] = data[min];
+                data[min] = tmp;
+            }
+        }
+
+        console.log(`Tri par selection: ${compare} comparaisons`);
+        return data;
+    };
+
+
 });
