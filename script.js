@@ -1,4 +1,4 @@
-const fs = require('fs');
+let fs = require('fs');
 let arr;
 
 const fileName = process.argv[2];
@@ -12,14 +12,16 @@ try {
     console.log("Le fichier renseigné déclanche les erreurs suivantes :");
     console.error(error);
     return;
-}
+};
+
+
 arr = arr.split(" ").map((elem) => (!isNaN(Number(elem)) ? Number(elem) : null)).filter(Boolean);
 
 if (arr.length < 1) {
     console.log("Aucun nombre dans le fichier de données renseigné");
     return;
 };
-console.log(arr);
+console.log(arr.length);
     //BubbleSort
     const bubbleSort = (data) => {
         let compare = 0;
